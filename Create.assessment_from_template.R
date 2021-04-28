@@ -146,8 +146,10 @@ Text.list=list(
 n.sp=1:2
 
   #figure location
-hndl_sp1="C:/Matias/Analyses/Population dynamics/Whiskery shark/2015/1_Outputs/"
-hndl_sp2="C:/Matias/Analyses/Population dynamics/Gummy shark/2015/1_Outputs/"
+if(!exists('handl_OneDrive')) source('C:/Users/myb/OneDrive - Department of Primary Industries and Regional Development/Matias/Analyses/SOURCE_SCRIPTS/Git_other/handl_OneDrive.R')
+
+hndl_sp1=handl_OneDrive("Analyses/Population dynamics/Whiskery shark/2015/1_Outputs/")
+hndl_sp2=handl_OneDrive("Analyses/Population dynamics/Gummy shark/2015/1_Outputs/")
 
 
 Figures.list=list(
@@ -191,9 +193,9 @@ ALL_bkmrk=c(names(Text.list),names(Figures.list),names(Figure.captions.list))
 
 
 #Run function with specified arguments
-hndl="C:/Matias/Admin/Templates/"
+hndl=handl_OneDrive("Admin/Templates/")
 Create.assessment(
-    WDir="C:/Matias/Reports/Gummy_whiskery_DOF_assessment",
+    WDir=handl_OneDrive("Reports/Gummy_whiskery_DOF_assessment"),
     doc.filename="Assessment_2016.docx",
     Template.loc=paste(hndl,'Resource Report Template v.23 Feb 2016_Assessment.docx',sep=""),
     Text.ls=Text.list,
